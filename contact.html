@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - RIC Systems</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* ========================
+   HERO SECTION
+======================== */
+.hero {
+    text-align: center;
+    padding: 5rem 2rem;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* ========================
+   EMAIL LINK
+======================== */
+.contact-email {
+    display: inline-block;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3498db;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 2px solid #3498db;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.contact-email:hover {
+    background-color: #3498db;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+/* ========================
+   BACK BUTTON
+======================== */
+.back-button {
+    display: inline-block;
+    margin-top: 2rem;
+    background-color: #7f8c8d;
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-button:hover {
+    background-color: #636e72;
+    transform: scale(1.05);
+}
+
+/* ========================
+   SCROLL REVEAL
+======================== */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media(max-width: 768px){
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .contact-email {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <img src="logo.png" alt="RIC Systems Logo" class="logo">
+    <nav>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero scroll-reveal">
+    <h1>Contact Me</h1>
+    <p>For quotes, ideas, or custom projects, reach out directly via email.</p>
+    <a href="mailto:cismasurobert766@gmail.com" class="contact-email scroll-reveal">
+        cismasurobert766@gmail.com
+    </a>
+    <br>
+    <button class="back-button scroll-reveal" onclick="window.location.href='index.html'">
+        Back to Home
+    </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="scroll-reveal" style="text-align:center; padding:2rem; background-color:#f0f0f0; color:#333; margin-top:2rem;">
+    © 2025 RIC Systems • Intelligent Automation
+</footer>
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+const revealElements = document.querySelectorAll('.scroll-reveal');
+
+function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+    revealElements.forEach(el => {
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 150;
+        if (elementTop < windowHeight - revealPoint) {
+            el.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+</html>
